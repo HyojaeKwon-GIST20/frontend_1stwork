@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+        </style>
+    <title>
+        Who is K-Jemmine
+    </title>
+    <meta charset="utf-8">
+    </head>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <body>
+        
+        <div id="up"></div>
+            <div id = "body">
+            <div id = "backGround">
+                <div>
+                    
+                <div id = title>
+                    잼민이 판독기
+                </div>
+                <div id = input>
+                                
+                    
+                      <input type="text" name="name" id="name-input" class="text-field" placeholder="이름을 입력해줘" ><br>
+                      <input type="text" name="name" id="birth-input" class="text-field" placeholder="나이를 입력해줘" ><br>
+                               
+                
+                         <input type="text" name = "name" id ="sex-input" class ="text-field" placeholder="성별을 입력해줘"><br>
+                    
+                   
+                         <input type="text" name = "name" id ="height-input" class ="text-field" placeholder="키를 입력해줘"><br>
+                    
+                    <div>
+                        <button type="button"  id="submit-btn">확인하기</button>
+                    </div>                    
+                       
+                    </div>
+                </div>
+                    <div id = side>
+                        <div id ="sideText">
+                                                명예의 전당
+                        </div>
+                    <div id = "sideLow">
+                        <h3 id="list">Top 5 Jam List</h3>
+                    </div>
+                </div>
+            </div>
+
+            
+            </div>
+            
+        
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>>
+    <script>
+        const button = document.querySelector('button');
+        var jem = [];
+        $('#name-input').on('input',checkInput);
+        $('#birth-input').on('input',checkInput);
+        $('#sex-input').on('input',checkInput);
+        $('#height-input').on('input',checkInput);
+        var right;
+        var age;
+        var nameOf;
+        function checkInput(){
+            
+        var name = $('#name-input').val();
+            nameOf= name;
+        var birth = $('#birth-input').val();
+        var sex = $('#sex-input').val();
+        var height = $('#height-input').val();
+        
+            
+            if(name === '' || birth === '' || sex === '' || height === ''){
+                $('#submit-btn').css('background-color','#9b9b9b');
+                right = flase;
+            }
+            else{
+                $('#submit-btn').css('background-color','#1bbc9b');
+                right = true;
+                age = birth;
+
+            }
+        };
+        
+        var count = 0;
+        
+        button.addEventListener('click',event => {
+            if(right == true){
+                if(age <= 20){
+                    alert('당신은 잼민이 입니다.');
+                    jem.push(name);
+                    if(count <5){
+                        var pNode = document.createElement('h5');
+                        var test = document.createTextNode(nameOf);
+                        var t = document.getElementById('list');
+                        pNode.appendChild(test);
+                        t.appendChild(pNode);
+                        count++;
+                    }
+                    
+                }
+                else{
+                    alert('당신은 잼민이가 아닙니다.')
+                }
+            }
+        });
+       
+        
+     
+        
+        
+    </script>
+            
+            
+    </body>
+</html>
